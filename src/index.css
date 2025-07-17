@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* --- TT Tunnels Trial Black --- */
+@font-face {
+  font-family: 'TT-Tunnels-Trial-Black'; /* EXACTLY match the string in @theme */
+  src: url('/fonts/TT-Tunnels-Trial-Black.otf') format('opentype'); /* Adjust path as needed */
+  font-weight: 900; /* Or whatever weight is appropriate for 'Black' */
+  font-style: normal;
+  font-display: swap; /* Recommended for performance */
+}
+
+/* --- TT Tunnels Trial Bold --- */
+@font-face {
+  font-family: 'TT-Tunnels-Trial-Bold';
+  src: url('/fonts/TT-Tunnels-Trial-Bold.otf') format('opentype');
+  font-weight: 700; /* Or whatever weight is appropriate for 'Bold' */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- TT Tunnels Trial Light --- */
+@font-face {
+  font-family: 'TT-Tunnels-Trial-Light';
+  src: url('/fonts/TT-Tunnels-Trial-Light.otf') format('opentype');
+  font-weight: 300; /* Or whatever weight is appropriate for 'Light' */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- TT Tunnels Trial Regular --- */
+@font-face {
+  font-family: 'TT-Tunnels-Trial-Regular';
+  src: url('/fonts/TT-Tunnels-Trial-Regular.otf') format('opentype');
+  font-weight: 400; /* Or whatever weight is appropriate for 'Regular' */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- TT Tunnels Trial Thin --- */
+@font-face {
+  font-family: 'TT-Tunnels-Trial-Thin';
+  src: url('/fonts/TT-Tunnels-Trial-Thin.otf') format('opentype');
+  font-weight: 100; /* Or whatever weight is appropriate for 'Thin' */
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@theme{
+      --font-tunnels-black: "TT-Tunnels-Trial-Black", sans-serif;
+      --font-tunnels-bold: "TT-Tunnels-Trial-Bold", sans-serif;
+      --font-tunnels-light: "TT-Tunnels-Trial-Light", sans-serif;
+      --font-tunnels-regular: "TT-Tunnels-Trial-Regular", sans-serif;
+      --font-tunnels-thin: "TT-Tunnels-Trial-Thin", sans-serif;
+  --color-primary: #2a2e4e;
+  --color-primary-red: #e53e3e;
+  --color-primary-white: #ffffff;
+  --color-gray-light: #a0aec0;
+  --color-accent-blue: #4a5568;
+}
