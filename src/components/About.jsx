@@ -1,9 +1,38 @@
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { SplitText } from 'gsap/SplitText'
 import { Edit3 } from 'lucide-react'
 import React from 'react'
 
+gsap.registerPlugin(ScrollTrigger)
+
 const About = () => {
+
+  useGSAP(() => {
+    const textSplit1 = SplitText.create(".line-1", {
+      type: "words, lines",
+    })
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".about",
+    start: "top 50%",
+    end: "bottom top",
+    markers: true,
+    yoyo: true,
+  }
+}
+
+);
+tl.from(textSplit1.lines, {
+  y: 100,
+  stagger: 0.05,
+  opacity: 0,
+});
+  })
+
   return (
-     <div className="min-h-screen bg-primary relative overflow-hidden">
+     <div className="min-h-screen bg-primary relative overflow-hidden about">
       {/* Fixed Logo - Top Left */}
       <div className="fixed top-6 left-6 lg:left-12 z-50">
         <div className="flex items-center space-x-4">
@@ -57,7 +86,7 @@ const About = () => {
 
           {/* Right Side - Main Heading */}
           <div className="lg:col-span-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-primary-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-primary-white line-1">
               DELIVERING INNOVATIVE DESIGN AND DEVELOPMENT WITH IMPACTFUL DIGITAL MARKETING CAMPAIGNS THAT CATAPULT BRANDS FORWARD.
             </h1>
           </div>

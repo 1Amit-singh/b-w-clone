@@ -1,7 +1,31 @@
 import React from 'react'
 import { Settings, ArrowRight, Edit3 } from 'lucide-react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/SplitText';
+
+gsap.registerPlugin(SplitText) 
 
 const Hero = () => {
+
+  useGSAP(() => {
+    const textSplit1 = SplitText.create(".heading-1", {
+      type: "chars"
+    })
+const tl = gsap.timeline();
+
+tl.from(textSplit1.chars, {
+  rotate: 70,
+  scale: 7,
+  x: "100vw",
+  y: 500,
+  opacity: 0,
+  stagger: 0.05,
+  ease: "power2.out",
+  duration: 0.5 // Adjust duration as needed
+});
+  })
+
   return (
       <div className="min-h-screen bg-primary relative overflow-hidden">
       {/* Background geometric pattern */}
@@ -31,11 +55,11 @@ const Hero = () => {
       {/* Main Content */}
       <main className="flex flex-col items-center justify-center px-6 lg:px-12 py-12 lg:py-24 relative z-10">
         <div className="text-center max-w-6xl">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none mb-4">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[15vw] font-black leading-none mb-4 heading-1 font-tunnels-black">
             <div className="text-primary-white">CREATIVE</div>
             <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
-              <span className="text-primary-red">WEB</span>
-              <span className="text-primary-white">STUDIO</span>
+              <span className="text-primary-red heading-2">WEB</span>
+              <span className="text-primary-white heading-3">STUDIO</span>
             </div>
           </h1>
         </div>
