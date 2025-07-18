@@ -4,10 +4,13 @@ import About from './components/About'
 import CardBox from './components/CardBox'
 import CardGrid from './components/CardGrid'
 import Footer from './components/Footer'
+import ReactLenis from 'lenis/react'
+import LenisProvider from './components/LenisProvider'
 
 const App = () => {
 
-  return (<div>
+  return (<>
+  <LenisProvider>
     <section>
       <Hero />
     </section>
@@ -20,7 +23,8 @@ const App = () => {
     <footer>
       <Footer />
     </footer>
-  </div>
+  </LenisProvider>
+  </>
   )
 }
 
