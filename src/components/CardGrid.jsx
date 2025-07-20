@@ -3,7 +3,7 @@ import CardBox from './CardBox'
 
 const CardGrid = () => {
 
-     const cardData = [
+    const cardData = [
     {
       rule: "RULE NO.1",
       heading: "DISCIPLINE",

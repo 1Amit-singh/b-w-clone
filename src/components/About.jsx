@@ -13,26 +13,26 @@ const About = () => {
     const textSplit1 = SplitText.create(".line-1", {
       type: "words, lines",
     })
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about",
-    start: "top 50%",
-    end: "bottom top",
-    markers: true,
-    yoyo: true,
-  }
-}
-
-);
-tl.from(textSplit1.lines, {
-  y: 100,
-  stagger: 0.05,
-  opacity: 0,
-});
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about",
+        start: "top bottom",
+        end: "bottom bottom",
+        markers: false,
+        yoyo: true,
+        scrub: 1,
+      }
+    });
+    tl.from(textSplit1.lines, {
+      y: 200,
+      stagger: 0.05,
+      opacity: 0,
+      duration: 0.2
+    });
   })
 
   return (
-     <div className="min-h-screen bg-primary relative overflow-hidden about">
+    <div className="min-h-screen bg-primary relative overflow-hidden about">
       {/* Fixed Logo - Top Left */}
       <div className="fixed top-6 left-6 lg:left-12 z-50">
         <div className="flex items-center space-x-4">
@@ -49,12 +49,12 @@ tl.from(textSplit1.lines, {
       <div className="fixed top-6 right-6 lg:right-12 z-50">
         <div className="text-primary-white">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 6H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            <path d="M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            <circle cx="18" cy="6" r="2" stroke="currentColor" strokeWidth="2"/>
-            <circle cx="6" cy="12" r="2" stroke="currentColor" strokeWidth="2"/>
-            <circle cx="18" cy="18" r="2" stroke="currentColor" strokeWidth="2"/>
+            <path d="M3 6H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="18" cy="6" r="2" stroke="currentColor" strokeWidth="2" />
+            <circle cx="6" cy="12" r="2" stroke="currentColor" strokeWidth="2" />
+            <circle cx="18" cy="18" r="2" stroke="currentColor" strokeWidth="2" />
           </svg>
         </div>
       </div>
@@ -69,14 +69,14 @@ tl.from(textSplit1.lines, {
       {/* Main Content */}
       <main className="flex items-center justify-center min-h-screen px-6 lg:px-12 py-24">
         <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          
+
           {/* Left Side - About Label and Description */}
           <div className="lg:col-span-4 space-y-8">
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-primary-red rounded-full"></div>
               <span className="text-gray-light text-sm tracking-wider font-medium">ABOUT</span>
             </div>
-            
+
             <div className="space-y-6">
               <p className="text-primary-white text-lg leading-relaxed">
                 WITH A DECADE OF EXPERIENCE UNDER OUR BELTS, BUZZWORTHY HAS BECOME A WORLD - RENOWNED STUDIO
@@ -86,7 +86,7 @@ tl.from(textSplit1.lines, {
 
           {/* Right Side - Main Heading */}
           <div className="lg:col-span-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-primary-white line-1">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-semibold leading-tight text-primary-white line-1">
               DELIVERING INNOVATIVE DESIGN AND DEVELOPMENT WITH IMPACTFUL DIGITAL MARKETING CAMPAIGNS THAT CATAPULT BRANDS FORWARD.
             </h1>
           </div>

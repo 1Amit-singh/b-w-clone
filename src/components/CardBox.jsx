@@ -2,12 +2,8 @@ import React from 'react'
 
 const CardBox = ({ rule, heading, description }) => {
   return (
-    <div className="bg-primary border border-gray-light/20 rounded-2xl p-8 lg:p-10 relative overflow-hidden group hover:border-primary-red/30 transition-all duration-300">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-primary-red rounded-full"></div>
-        <div className="absolute -left-4 -top-4 w-16 h-16 bg-primary-red/30 rounded-lg transform rotate-12"></div>
-      </div>
+    <div className="bg-primary w-[500px] border border-gray-light/20 rounded-2xl p-8 lg:p-10 relative overflow-hidden group hover:border-primary-red/30 transition-all duration-300">
+      
 
       {/* Content */}
       <div className="relative z-10">
@@ -20,7 +16,7 @@ const CardBox = ({ rule, heading, description }) => {
         </div>
 
         {/* Heading */}
-        <h3 className="text-primary-white text-3xl lg:text-4xl xl:text-5xl font-black leading-tight mb-6 group-hover:text-primary-red/90 transition-colors duration-300">
+        <h3 className="text-primary-white text-3xl lg:text-4xl xl:text-5xl font-black leading-tight mb-16 group-hover:text-primary-red/90 transition-colors duration-300">
           {heading}
         </h3>
 

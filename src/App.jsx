@@ -6,6 +6,7 @@ import CardGrid from './components/CardGrid'
 import Footer from './components/Footer'
 import ReactLenis from 'lenis/react'
 import LenisProvider from './components/LenisProvider'
+import Attitude from './components/Attitude'
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
     <section>
       <About />
     </section>
+      <Attitude />
     <div>
       <CardGrid />
     </div>
