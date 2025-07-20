@@ -2,7 +2,7 @@ import React from 'react'
 
 const CardBox = ({ rule, heading, description }) => {
   return (
-    <div className="bg-primary w-[500px] border border-gray-light/20 rounded-2xl p-8 lg:p-10 relative overflow-hidden group hover:border-primary-red/30 transition-all duration-300">
+    <div className="bg-primary w-[350px] md:w-[500px] border border-gray-light/20 rounded-2xl p-8 lg:p-10 relative overflow-hidden group hover:border-primary-red/30 transition-all duration-300">
       
 
       {/* Content */}

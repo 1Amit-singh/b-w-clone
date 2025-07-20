@@ -35,11 +35,11 @@ const Attitude = () => {
       type: "chars",
     })
     gsap.from(textSplit1.chars, {
-      y: 400,
+      yPercent: 100,
       stagger: 0.05,
       scrollTrigger: {
         trigger: ".attitude-section",
-        start: "-10% bottom",
+        start: "20% bottom",
         end: "bottom bottom",
         markers: true,
         yoyo: true, 
@@ -64,7 +64,7 @@ const Attitude = () => {
       }
     })
     tl.fromTo(".cards-scroll", {
-      x: "60% ",
+      x: "100% ",
       ease: "linear",
     }, {
       x: "-100% ",
@@ -74,7 +74,7 @@ const Attitude = () => {
   })
   return (
     <section className='attitude-section relative overflow-hidden'>
-      <div className='min-h-screen bg-primary attitude'>
+      <div className='min-h-screen h-dvh bg-primary attitude flex items-center justify-center'>
         <h1 className='text-[34vw] text-center font-tunnels-bold text-white lowercase'>Attitude</h1>
         <div className='absolute top-[50%] -translate-y-1/2 left-0 flex gap-44 cards-scroll'>
           {cardData.map((card, index) => (

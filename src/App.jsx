@@ -19,9 +19,7 @@ const App = () => {
       <About />
     </section>
       <Attitude />
-    <div>
-      <CardGrid />
-    </div>
+   
     <footer>
       <Footer />
     </footer>
