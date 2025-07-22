@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 
-gsap.registerPlugin(SplitText) 
+gsap.registerPlugin(SplitText)
 
 const Hero = () => {
 
@@ -12,22 +12,22 @@ const Hero = () => {
     const textSplit1 = SplitText.create(".heading-1", {
       type: "chars"
     })
-const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-tl.from(textSplit1.chars, {
-  rotate: 70,
-  scale: 7,
-  x: "100vw",
-  y: 500,
-  opacity: 0,
-  stagger: 0.05,
-  ease: "power2.out",
-  duration: 0.5 // Adjust duration as needed
-});
+    tl.from(textSplit1.chars, {
+      rotate: 70,
+      scale: 7,
+      x: "100vw",
+      y: 500,
+      opacity: 0,
+      stagger: 0.05,
+      ease: "power2.out",
+      duration: 0.5 // Adjust duration as needed
+    });
   })
 
   return (
-      <div className="min-h-screen bg-primary relative overflow-hidden">
+    <div className="min-h-screen bg-primary relative overflow-hidden">
       {/* Background geometric pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute left-1/4 top-1/3 w-96 h-96 border border-primary-red rounded-full transform rotate-12"></div>
@@ -36,15 +36,7 @@ tl.from(textSplit1.chars, {
 
       {/* Header */}
       <header className="flex justify-between items-center px-6 lg:px-12 py-6 relative z-10">
-        <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-primary-red rounded-full flex items-center justify-center">
-            <span className="text-primary-white font-bold text-xl">b</span>
-          </div>
-          <span className="text-primary-white text-sm font-medium tracking-wider hidden md:block">
-            BUZZWORTHY STUDIO
-          </span>
-        </div>
-
+        <div></div>
         <div className="flex items-center space-x-2 text-primary-white text-sm font-medium">
           <span>WE</span>
           <span className="text-primary-red">•</span>
@@ -53,13 +45,15 @@ tl.from(textSplit1.chars, {
       </header>
 
       {/* Main Content */}
-      <main className="flex flex-col items-center justify-center px-6 lg:px-12 py-12 lg:py-24 relative z-10">
-        <div className="text-center max-w-6xl">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[15vw] font-black leading-none mb-4 heading-1 font-tunnels-black">
-            <div className="text-primary-white">CREATIVE</div>
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
-              <span className="text-primary-red heading-2">WEB</span>
-              <span className="text-primary-white heading-3">STUDIO</span>
+      <main className="flex flex-col items-center justify-center px-6 lg:px-12 py-12 lg:py-24 relative z-10 w-full">
+        <div className="text-center w-[60%] min-w-[250px]">
+          <h1 className="text-primary-white text-6xl sm:text-7xl md:text-8xl lg:text-[12vw] font-black leading-none mb-4 heading-1 font-tunnels-black">
+            <div className='flex items-center justify-between md:gap-10'>
+              <span>CREATIVE</span>
+              <span className='text-primary-red'>WEB</span>
+            </div>
+            <div className="text-right w-full">
+              STUDIO
             </div>
           </h1>
         </div>

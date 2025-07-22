@@ -51,7 +51,7 @@ const Attitude = () => {
         trigger: ".attitude-section",
         start: "top top",
         end: "150% top",
-        markers: false,
+        markers: true,
         pin: true,
         scrub: 1,
         onUpdate: (self) => {
@@ -74,11 +74,11 @@ const Attitude = () => {
   })
   return (
     <section className='attitude-section relative overflow-hidden'>
-      <div className='min-h-screen h-dvh bg-primary attitude flex items-center justify-center'>
+      <div className='min-h-screen h-dvh lg:h-[101vh] bg-primary attitude flex items-center justify-center relative'>
         <h1 className='text-[34vw] text-center font-tunnels-bold text-white lowercase'>Attitude</h1>
         <div className='absolute top-[50%] -translate-y-1/2 left-0 flex gap-44 cards-scroll'>
           {cardData.map((card, index) => (
-            <div className={`${index % 2 == 0 ? "-translate-y-1/2" : "translate-y-1/2"} card-item`} key={index}>
+            <div className={`card-item h-[80vh] flex ${index%2==0 ? "items-start" : "items-end"}`} key={index}>
               <CardBox
                 key={index}
                 rule={card.rule}
