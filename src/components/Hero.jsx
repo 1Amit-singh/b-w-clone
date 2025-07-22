@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Settings, ArrowRight, Edit3 } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
+import Mashroom from './Mashroom';
+import { Canvas } from '@react-three/fiber';
+import { Environment, Float, OrbitControls } from '@react-three/drei';
 
 gsap.registerPlugin(SplitText)
 
 const Hero = () => {
-
   useGSAP(() => {
     const textSplit1 = SplitText.create(".heading-1", {
       type: "chars"
@@ -28,11 +30,6 @@ const Hero = () => {
 
   return (
     <div className="min-h-screen bg-primary relative overflow-hidden">
-      {/* Background geometric pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute left-1/4 top-1/3 w-96 h-96 border border-primary-red rounded-full transform rotate-12"></div>
-        <div className="absolute right-1/4 bottom-1/4 w-64 h-64 border border-primary-red rounded-lg transform -rotate-12"></div>
-      </div>
 
       {/* Header */}
       <header className="flex justify-between items-center px-6 lg:px-12 py-6 relative z-10">
@@ -45,37 +42,52 @@ const Hero = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex flex-col items-center justify-center px-6 lg:px-12 py-12 lg:py-24 relative z-10 w-full">
-        <div className="text-center w-[60%] min-w-[250px]">
-          <h1 className="text-primary-white text-6xl sm:text-7xl md:text-8xl lg:text-[12vw] font-black leading-none mb-4 heading-1 font-tunnels-black">
+      <div className="flex flex-col items-center justify-center px-6 relative z-10 w-full">
+        <div className="text-center w-[80%] min-w-[250px]">
+          <div className="text-primary-white text-6xl sm:text-7xl md:text-8xl lg:text-[12vw] xl:text-[14vw] font-black leading-none mb-1 heading-1 font-tunnels-black">
             <div className='flex items-center justify-between md:gap-10'>
               <span>CREATIVE</span>
               <span className='text-primary-red'>WEB</span>
             </div>
-            <div className="text-right w-full">
-              STUDIO
-            </div>
-          </h1>
-        </div>
-
-        {/* Latest Project Section */}
-        <div className="mt-16 lg:mt-24 flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl">
-          <div className="flex items-center space-x-4 mb-8 lg:mb-0">
+          </div>
+          <div className="flex md:flex-row flex-col items-center md:items-start justify-between gap-4 text-right w-full -mt-6">
+            <div className='w-full md:h-[500px] h-[280px]'>
+              <Canvas className="w-full h-full">
+                <Suspense fallback={null}>
+                  <Float speed={1.5} rotationIntensity={1} >
+                    <Mashroom scale={window.innerWidth > 1440 ? 1.1 : 1} />
+                  </Float>
+                  <Environment preset="lobby" />
+                  <OrbitControls enableZoom={false} />
+                </Suspense>
+              </Canvas>
+              </div>
+              <div>
+              <span className='text-nowrap text-primary-white text-6xl sm:text-7xl md:text-8xl lg:text-[12vw] xl:text-[14vw] font-black leading-none mb-4 heading-1 font-tunnels-black'>STUDIO</span>
+  {/* Latest Project Section */}
+        <div className="mt-16 lg:mt-24 flex flex-col w-full">
+          <div className="flex items-center justify-between space-x-4 mb-8 lg:mb-0 border-[1px] rounded-2xl border-white/30 px-6 py-4">
             <span className="text-gray-light text-sm tracking-wider">LATEST PROJECT</span>
             <ArrowRight className="text-primary-red" size={20} />
             <span className="text-primary-white text-sm font-medium">SLING SHOT</span>
           </div>
 
-          <div className="text-right max-w-md">
+          <div className="flex justify-between items-center md:flex-row flex-col-reverse text-right max-w-md mt-10">
+            <div className="">
+              <span className="text-gray-light text-xs text-nowrap">[ SCROLL ]</span>
+            </div>
             <p className="text-gray-light text-sm leading-relaxed mb-4">
               WE SPECIALIZE IN CREATING MEANINGFUL DIGITAL EXPERIENCES INFUSED WITH EMOTION, DRIVEN BY INNOVATION, EVOKING A SENSE OF AWE AND WONDER.
             </p>
-            <div className="flex items-center justify-end space-x-2">
-              <span className="text-gray-light text-xs">( SCROLL )</span>
-            </div>
           </div>
         </div>
-      </main>
+              </div>
+            </div>
+        </div>
+
+
+      
+      </div>
 
       {/* Floating Action Button */}
       <div className="fixed bottom-8 right-8 z-20">

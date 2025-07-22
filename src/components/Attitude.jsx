@@ -41,7 +41,7 @@ const Attitude = () => {
         trigger: ".attitude-section",
         start: "20% bottom",
         end: "bottom bottom",
-        markers: true,
+        markers: false,
         yoyo: true, 
         scrub: 1,
       }
@@ -51,7 +51,7 @@ const Attitude = () => {
         trigger: ".attitude-section",
         start: "top top",
         end: "150% top",
-        markers: true,
+        markers: false,
         pin: true,
         scrub: 1,
         onUpdate: (self) => {
